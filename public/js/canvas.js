@@ -30,12 +30,14 @@ var drawing = function() {
 		e.preventDefault();
 		var color = $('#myForm').serialize();
 		$.ajax({
-			url: '/changecolor',
+			url: '/changeattr',
 			type: 'post',
 			data: color
 		}).done(function(data){
 			console.log(data);
+			console.log(data[color])
 			ctx.strokeStyle=data;
+			ctx.lineWidth="";
 		})
 		console.log("submit clicked");
 	})
