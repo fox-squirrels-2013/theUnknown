@@ -17,3 +17,5 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'rspec'
+

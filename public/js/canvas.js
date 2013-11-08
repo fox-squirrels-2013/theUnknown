@@ -21,3 +21,6 @@ canvasElement.addEventListener("mousemove",function(event){
 canvasElement.addEventListener("mouseup",function(){
 	isDrawing = false;	
 })
+
+
+var dataURL = canvas.toDataURL();
