@@ -42,3 +42,5 @@ var drawing = function() {
 
 }
 drawing();	
+
+// var dataURL = canvas.toDataURL();
