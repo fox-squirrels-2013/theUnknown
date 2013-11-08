@@ -1,7 +1,11 @@
 class CreateDrawings < ActiveRecord::Migration
-  def up
-  end
+  def change
+  	create_table :drawings  do |t|
+  		t.belongs_to :user
+  		t.string :title 
+  		t.string :URL
 
-  def down
+
+  		t.timestamps
   end
 end
