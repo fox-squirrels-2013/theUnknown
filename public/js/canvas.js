@@ -26,19 +26,19 @@ var drawing = function() {
 		isDrawing = false;	
 	})
 
-	$('#myForm').on('submit',function(e){
+	$('#myForm').on('change', '.drawing-style', function(e){
 		e.preventDefault();
-		var color = $('#myForm').serialize();
+		var form = $('#myForm')
+
 		$.ajax({
-			url: '/changeattr',
-			type: 'post',
-			data: color
+			url: form.prop('action'),
+			type: form.prop('method'),
+			data: form.serialize()
 		}).done(function(data){
-			console.log(data);
 			ctx.strokeStyle=data.color;
 			ctx.lineWidth=data.line_width;
 		})
-		console.log("submit clicked");
 	})
+
 }
 drawing();	
