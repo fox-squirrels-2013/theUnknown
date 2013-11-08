@@ -8,5 +8,9 @@ end
 
 post '/changecolor' do
 	puts params
-	# @color = params
+	
+	@color = params[:color]
+
+	@color
+
 end

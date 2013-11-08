@@ -28,12 +28,15 @@ var drawing = function() {
 
 	$('#myForm').on('submit',function(e){
 		e.preventDefault();
-		console.log($('#myForm').serialize());
-		// $.ajax({
-		// 	url: '/changecolor',
-		// 	type: 'post',
-		// 	data: 
-		// })
+		var color = $('#myForm').serialize();
+		$.ajax({
+			url: '/changecolor',
+			type: 'post',
+			data: color
+		}).done(function(data){
+			console.log(data);
+			ctx.strokeStyle=data;
+		})
 		console.log("submit clicked");
 	})
 }
