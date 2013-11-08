@@ -35,9 +35,8 @@ var drawing = function() {
 			data: color
 		}).done(function(data){
 			console.log(data);
-			console.log(data[color])
-			ctx.strokeStyle=data;
-			ctx.lineWidth="";
+			ctx.strokeStyle=data.color;
+			ctx.lineWidth=data.line_width;
 		})
 		console.log("submit clicked");
 	})
