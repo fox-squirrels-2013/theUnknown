@@ -34,9 +34,9 @@ var drawing = function() {
 			url: form.prop('action'),
 			type: form.prop('method'),
 			data: form.serialize()
-		}).done(function(data){
-			ctx.strokeStyle=data.color;
-			ctx.lineWidth=data.line_width;
+		}).done(function(d){
+			ctx.strokeStyle=d.color;
+			ctx.lineWidth=d.line_width;
 		})
 	})
 
