@@ -1,6 +1,6 @@
 <canvas id="myCanvas" width="500" height="300" style="border:1px solid #000000;"></canvas>
 
-<img id="canvasImg" alt="Right click to save me!">
+<!-- <img id="canvasImg" alt="Right click to save me!"> -->
 
 <form id="myForm" method="post" action="/changeattr">
 	
@@ -39,15 +39,15 @@
 <!-- IF THEY ARE LOGGED IN, SHOW THEM SAVE, AND LOGOUT, AND VIEW ALL SAVED DRAWINGS -->
 <!--
 <%#if current_user%>
-	Hey, <%= current_user.email %>!
+	Hey, <%#= current_user.email %>!
 	<button id="log_out">Log out</button>
 	<button id="save">Save your masterpiece!</button>
 	<button id="show_drawings">See your saved drawings!</button>
 <%#end%>
---></form>
+-->
 
-<form id="saving" method="post" action="/save-image">
+<!-- <form id="saving" method="post" action="/save-image">
 	<input type="text"  name="drawing[title]" value="Your Image"> 
 	<input type="hidden" id="image-data" name="drawing[image_data]"> 
 	<input type="submit" value="save">
-</form>
+</form> -->

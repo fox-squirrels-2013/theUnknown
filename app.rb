@@ -47,44 +47,44 @@ post '/changeattr' do
 end
 
 
-def logged_in?
-  session[:user_id].present?
-end
+# def logged_in?
+#   session[:user_id].present?
+# end
 
-def current_user
-  return nil unless logged_in?
-  @current_user ||=  User.find( session[:user_id] ) 
-end
+# def current_user
+#   return nil unless logged_in?
+#   @current_user ||=  User.find( session[:user_id] ) 
+# end
 
 
-###### save route
+# ###### save route
 
-post '/save-image' do
+# post '/save-image' do
   
 
-	#redirect if !logged_in?
+# 	#redirect if !logged_in?
 
-	# save the file using params data
-    drawing = current_user.drawings.new(params[:drawing])
-    if drawing.save
-      if request.xhr?
-        return [ 200,  
-          {"Content-Type" => "text/plain"}, # the hash of headers
-          ["Saved successfully"]     
-          ]
-      else
-        	redirect "/show-image/#{drawing.id}"
-      end  # redirect to display image
-    else
-      # render error
-    end
-end
+# 	# save the file using params data
+#     drawing = current_user.drawings.new(params[:drawing])
+#     if drawing.save
+#       if request.xhr?
+#         return [ 200,  
+#           {"Content-Type" => "text/plain"}, # the hash of headers
+#           ["Saved successfully"]     
+#           ]
+#       else
+#         	redirect "/show-image/#{drawing.id}"
+#       end  # redirect to display image
+#     else
+#       # render error
+#     end
+# end
 
-get '/show-image/:id' do
-   @drawing = Drawing.find( params[:id] )
+# get '/show-image/:id' do
+#    @drawing = Drawing.find( params[:id] )
    
-   erb :"show-image"
-end
+#    erb :"show-image"
+# end
 
 get '/logout' do
 	session.clear

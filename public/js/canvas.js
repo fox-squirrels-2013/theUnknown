@@ -93,18 +93,18 @@ $( document ).ready(function() {
 });
 
 
-$( "#saving" ).submit(function(e) {
-  data = canvasElement.toDataURL("image/png")
+// $( "#saving" ).submit(function(e) {
+//   data = canvasElement.toDataURL("image/png")
 
-  // $("#image-data").val( data )
+//   // $("#image-data").val( data )
   
-  $.post( "/save-image", 
-  	{ drawing: { title: $('#saving input[type=text]').val(), 
-   		image_data: data } }, function( data ) {
-    		alert(data)
-		});
-  e.preventDefault()
-});
+//   $.post( "/save-image", 
+//   	{ drawing: { title: $('#saving input[type=text]').val(), 
+//    		image_data: data } }, function( data ) {
+//     		alert(data)
+// 		});
+//   e.preventDefault()
+// });
 
 
 
