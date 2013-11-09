@@ -28,7 +28,20 @@ style="border:1px solid #000000;">
 
 </form>
 
-Want to save your beautiful masterpieces to view them later?
-<button id="log_in">Log in!</button>
-or
-<button id="create_account">Create an account!</button>
+<!-- ONLY SHOW THIS SHIT IF THEY AREN'T LOGGED INNN DOE -->
+<div id="overwrite">
+	Want to save your beautiful masterpieces to view them later?
+	<button id="log_in">Log in!</button>
+	or
+	<button id="create_account">Create an account!</button>
+</div>
+
+<!-- IF THEY ARE LOGGED IN, SHOW THEM SAVE, AND LOGOUT, AND VIEW ALL SAVED DRAWINGS -->
+<!--
+<%#if current_user%>
+	Hey, <%= current_user.email %>!
+	<button id="log_out">Log out</button>
+	<button id="save">Save your masterpiece!</button>
+	<button id="show_drawings">See your saved drawings!</button>
+<%#end%>
+-->

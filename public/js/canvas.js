@@ -48,10 +48,23 @@ $( document ).ready(function() {
 	var logInButton = $('#log_in')
 	var logInFunction = function() {
 		logInButton.on('click', function(e){
-			// this is where you pop up the log in shit
-			var username = window.prompt('Enter your username')
+			// this is where you pop up the login shit
+			var email = window.prompt('Enter your email')
 			var password = window.prompt('Enter your password')
-			$.ajax
+
+			$.ajax({
+				url: '/login',
+				type: 'post',
+				data: {email: email, password: password}
+			}).done(function(d){
+				if(d == 'true'){
+					console.log('true')
+					// MAYBE OVERWRITE TO SHOW THE OTHER OPTIONS
+				}else{
+					console.log('false')
+				}	
+			})
+
 		})
 	}
 	logInFunction();
@@ -60,9 +73,19 @@ $( document ).ready(function() {
 	var createAccountFunction = function() {
 		createAccountButton.on('click', function(e){
 			// this is where you pop up the log in shit
-			var username = window.prompt('Enter a username')
+			var email = window.prompt('Enter an email')
 			var password = window.prompt('Enter a password')
-			debugger
+			
+			$.ajax({
+				url: '/createaccount',
+				type: 'post',
+				data: {email: email, password: password}
+			}).done(function(d){
+				if(d){
+					alert('INVALID EMAIL MOFUCKA')
+				}
+			})
+
 		})
 	}
 	createAccountFunction();

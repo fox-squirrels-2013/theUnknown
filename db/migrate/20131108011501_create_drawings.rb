@@ -4,7 +4,7 @@ class CreateDrawings < ActiveRecord::Migration
   		t.belongs_to :user
   		t.string :title 
   		t.string :URL
-  		
   		t.timestamps
+  	end	
   end
 end

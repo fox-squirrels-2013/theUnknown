@@ -19,3 +19,4 @@ gem 'shotgun'
 
 gem 'rspec'
 
+gem 'sinatra-activerecord'
