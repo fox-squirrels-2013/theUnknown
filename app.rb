@@ -26,8 +26,7 @@ def logged_in?
 end
 
 def current_user
-	# return User.first
-    @current_user ||= logged_in? && User.find( session[:user_id] ) 
+  @current_user ||= logged_in? && User.find( session[:user_id] ) 
 end
 
 
