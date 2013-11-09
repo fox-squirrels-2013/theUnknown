@@ -20,9 +20,7 @@ describe User do
 			should validate_presence_of(:password)
 		end
 
-		it 'tests that the user has a name' do
-			should validate_presence_of(:name)
-		end
+		
 	end
 end
 
