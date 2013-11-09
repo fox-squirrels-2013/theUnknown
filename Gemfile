@@ -20,3 +20,4 @@ gem 'shotgun'
 
 gem 'rspec'
 
+gem "shoulda-matchers"

@@ -1,8 +1,10 @@
+require './app'
+
 require 'rubygems'
 require 'bundler/setup'
 require 'active_record'
 require 'rspec'
-
+require 'shoulda-matchers'
 
 ENV['RACK_ENV'] ||= 'test'
 
