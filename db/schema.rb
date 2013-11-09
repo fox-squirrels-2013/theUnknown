@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20131108011501) do
   create_table "drawings", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.string   "URL"
+    t.binary   "image_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

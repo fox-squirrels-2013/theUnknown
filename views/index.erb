@@ -1,6 +1,6 @@
-<canvas id="myCanvas" width="500" height="300"
-style="border:1px solid #000000;">
-</canvas>
+<canvas id="myCanvas" width="500" height="300" style="border:1px solid #000000;"></canvas>
+
+<img id="canvasImg" alt="Right click to save me!">
 
 <form id="myForm" method="post" action="/changeattr">
 	
@@ -26,4 +26,10 @@ style="border:1px solid #000000;">
 	  <option value="10">10</option>
 	</select>
 
+</form>
+
+<form id="saving" method="post" action="/save-image">
+	<input type="text"  name="drawing[title]" value="Your Image"> 
+	<input type="hidden" id="image-data" name="drawing[image_data]"> 
+	<input type="submit" value="save">
 </form>
