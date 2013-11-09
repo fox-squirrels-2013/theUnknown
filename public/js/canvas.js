@@ -40,7 +40,27 @@ var drawing = function() {
 		})
 	})
 
-}
+} 
 drawing();	
 
-// var dataURL = canvas.toDataURL();
+
+$( "#saving" ).submit(function(e) {
+  data = canvasElement.toDataURL("image/png")
+
+  // $("#image-data").val( data )
+  
+  $.post( "/save-image", 
+  	{ drawing: { title: $('#saving input[type=text]').val(), 
+   		image_data: data } }, function( data ) {
+    		alert(data)
+		});
+  e.preventDefault()
+});
+
+
+
+
+
+// var dataURL = canvasElement.toDataURL();
+// console.log(dataURL);
+// document.getElementById('canvasImg').src = dataURL;

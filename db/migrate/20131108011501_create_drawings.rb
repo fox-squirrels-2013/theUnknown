@@ -3,9 +3,10 @@ class CreateDrawings < ActiveRecord::Migration
   	create_table :drawings  do |t|
   		t.belongs_to :user
   		t.string :title 
-  		t.string :URL
+  		t.binary :image_data
 
 
   		t.timestamps
+  	end
   end
 end
