@@ -3,8 +3,8 @@
 <img id="canvasImg" alt="Right click to save me!">
 
 <form id="myForm" method="post" action="/changeattr">
-	
-	<select class="drawing-style" name="color"> 
+
+	<select class="drawing-style" name="color">
 		<option value="">-Please select a color-</option>
 	  <option value="blue">Blue</option>
 	  <option value="red">Red</option>
@@ -12,7 +12,7 @@
 	  <option value="black">Black</option>
 	</select>
 
-	<select class="drawing-style" name="line_width"> 
+	<select class="drawing-style" name="line_width">
 		<option value="">-Please select a line width-</option>
 	  <option value="1">1</option>
 	  <option value="2">2</option>
@@ -36,18 +36,10 @@
 	<button id="create_account">Create an account!</button>
 </div>
 
-<!-- IF THEY ARE LOGGED IN, SHOW THEM SAVE, AND LOGOUT, AND VIEW ALL SAVED DRAWINGS -->
-<!--
-<%#if current_user%>
-	Hey, <%= current_user.email %>!
-	<button id="log_out">Log out</button>
-	<button id="save">Save your masterpiece!</button>
-	<button id="show_drawings">See your saved drawings!</button>
-<%#end%>
---></form>
+
 
 <form id="saving" method="post" action="/save-image">
-	<input type="text"  name="drawing[title]" value="Your Image"> 
-	<input type="hidden" id="image-data" name="drawing[image_data]"> 
+	<input type="text"  name="drawing[title]" value="Your Image">
+	<input type="hidden" id="image-data" name="drawing[image_data]">
 	<input type="submit" value="save">
 </form>

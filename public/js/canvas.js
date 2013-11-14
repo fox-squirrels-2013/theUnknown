@@ -25,12 +25,17 @@ $( document ).ready(function() {
 		})
 
 		canvasElement.addEventListener("mouseup",function(){
-			isDrawing = false;	
+			isDrawing = false;
 		})
 
 		$('#myForm').on('change', '.drawing-style', function(e){
 			e.preventDefault();
 			var form = $('#myForm')
+
+// no SERVER HERE!!!!! no ajax request to the server - just use the client
+
+	// ctx.strokeStyle=d.color;
+	// 			ctx.lineWidth=d.line_width;
 
 			$.ajax({
 				url: form.prop('action'),
@@ -43,8 +48,9 @@ $( document ).ready(function() {
 		})
 
 	}
-	drawing();	
-	
+	drawing();
+
+
 	var logInButton = $('#log_in')
 	var logInFunction = function() {
 		logInButton.on('click', function(e){
@@ -62,7 +68,7 @@ $( document ).ready(function() {
 					// MAYBE OVERWRITE TO SHOW THE OTHER OPTIONS
 				}else{
 					console.log('false')
-				}	
+				}
 			})
 
 		})
@@ -75,7 +81,7 @@ $( document ).ready(function() {
 			// this is where you pop up the log in shit
 			var email = window.prompt('Enter an email')
 			var password = window.prompt('Enter a password')
-			
+
 			$.ajax({
 				url: '/createaccount',
 				type: 'post',
@@ -97,9 +103,9 @@ $( "#saving" ).submit(function(e) {
   data = canvasElement.toDataURL("image/png")
 
   // $("#image-data").val( data )
-  
-  $.post( "/save-image", 
-  	{ drawing: { title: $('#saving input[type=text]').val(), 
+
+  $.post( "/save-image",
+  	{ drawing: { title: $('#saving input[type=text]').val(),
    		image_data: data } }, function( data ) {
     		alert(data)
 		});
